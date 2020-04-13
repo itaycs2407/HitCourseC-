@@ -5,3 +5,10 @@ C:\Users\Itay Cohen\source\repos\ConsoleApp2\B20_Ex01_1\obj\Debug\B20_Ex01_1.csp
 C:\Users\Itay Cohen\source\repos\ConsoleApp2\B20_Ex01_1\obj\Debug\B20_Ex01_1.csproj.CoreCompileInputs.cache
 C:\Users\Itay Cohen\source\repos\ConsoleApp2\B20_Ex01_1\obj\Debug\B20_Ex01_1.exe
 C:\Users\Itay Cohen\source\repos\ConsoleApp2\B20_Ex01_1\obj\Debug\B20_Ex01_1.pdb
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_1\bin\Debug\B20_Ex01_1.exe.config
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_1\bin\Debug\B20_Ex01_1.exe
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_1\bin\Debug\B20_Ex01_1.pdb
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_1\obj\Debug\B20_Ex01_1.csprojAssemblyReference.cache
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_1\obj\Debug\B20_Ex01_1.csproj.CoreCompileInputs.cache
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_1\obj\Debug\B20_Ex01_1.exe
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_1\obj\Debug\B20_Ex01_1.pdb

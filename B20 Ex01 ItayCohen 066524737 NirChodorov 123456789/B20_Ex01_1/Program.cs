@@ -11,18 +11,34 @@ namespace B20_Ex01_1
 
         public static void Ex1()
         {
-            int maxDecimalNumber, minDecimalNumber;
+            int maxDecimalNumber = 0, minDecimalNumber = 0;
+            int numOfZero = 0, numOfOne = 0;
             Console.WriteLine("Input the first number.");
             string firstNumberSTR = GetInputForBinaryNumber();
+     //     string firstNumberSTR = "111011000"; 
             Console.WriteLine("Input the second number.");
             string thirdNumberSTR = GetInputForBinaryNumber();
+     //     string thirdNumberSTR = "111010010";
             Console.WriteLine("Input the third number.");
             string secondNumberSTR = GetInputForBinaryNumber();
+     //     string secondNumberSTR = "111010100"; 
             int firstNumberDec = ConvertToDecimal(firstNumberSTR);
             int secondNumberDec = ConvertToDecimal(secondNumberSTR);
             int thirdNumberDec = ConvertToDecimal(thirdNumberSTR);
-
-            System.Console.WriteLine(CheckForSpecialChar(firstNumberSTR, '0'));
+            Console.WriteLine(String.Format("The first number you enrterd is  : {0} in binary form, it equals to {1} in decimal form.", firstNumberSTR, firstNumberDec));
+            Console.WriteLine(String.Format("The second number you enrterd is : {0} in binary form, it equals to {1} in decimal form.", secondNumberSTR, secondNumberDec));
+            Console.WriteLine(String.Format("The third number you enrterd is  : {0} in binary form, it equals to {1} in decimal form.", thirdNumberSTR, thirdNumberDec));
+            Console.WriteLine("============================================");
+            CheckForMaxMin(firstNumberDec, secondNumberDec, thirdNumberDec, ref maxDecimalNumber, ref minDecimalNumber);
+            Console.WriteLine(" More statistics : ");
+            Console.WriteLine("The max number is {0} and the minimum is {1} : ", maxDecimalNumber, minDecimalNumber);
+            Console.WriteLine("Among the three numbers, you have {0} numbers which are the power of 2.",CheckForPowerOfTwo(firstNumberDec) + CheckForPowerOfTwo(secondNumberDec) + CheckForPowerOfTwo(thirdNumberDec));
+            Console.WriteLine("Among the three numbers, you have {0} numbers which there digits are in growing order", Convert.ToInt32(CheckForUpperSeries(firstNumberDec)) + Convert.ToInt32(CheckForUpperSeries(secondNumberDec)) + Convert.ToInt32(CheckForUpperSeries(thirdNumberDec)));
+            numOfOne = CheckForSpecialChar(firstNumberSTR, '1') + CheckForSpecialChar(secondNumberSTR, '0') + CheckForSpecialChar(thirdNumberSTR, '0');
+            numOfZero = CheckForSpecialChar(firstNumberSTR, '0') + CheckForSpecialChar(secondNumberSTR, '1') + CheckForSpecialChar(thirdNumberSTR, '1');
+            Console.WriteLine("The avg number of 1 is : {0: 0.00}",(double)numOfOne / 3);
+            Console.WriteLine("The avg number of 0 is : {0: 0.00}", (double)numOfZero / 3);
+            Console.WriteLine("Press any key to exit....");           
             System.Console.ReadLine();
         }
 
@@ -99,12 +115,13 @@ namespace B20_Ex01_1
 
             for (i = 0; i < i_numberAsStr.Length; i++)
             {
-                addition = (addition * 2) + i_numberAsStr[i];
+                addition = (addition * 2) + Convert.ToInt32(i_numberAsStr[i]) - 48 ;
             }
 
             return addition;
         }
         // maybe to do for down series
+
         public static bool CheckForUpperSeries(int i_number)
         {
             if (i_number < 10)
