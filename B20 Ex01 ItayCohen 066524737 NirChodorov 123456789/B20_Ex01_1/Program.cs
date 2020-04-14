@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace B20_Ex01_1
 {
@@ -11,6 +12,8 @@ namespace B20_Ex01_1
 
         public static void Ex1()
         {
+            string ourer = string.Empty;
+            ConvertTwoCompliment("111011000", ref ourer);
             int maxDecimalNumber = 0, minDecimalNumber = 0;
             int numOfZero = 0, numOfOne = 0;
             Console.WriteLine("Input the first number.");
@@ -170,6 +173,37 @@ namespace B20_Ex01_1
                 }
             } 
             */
+        }
+
+        public static bool ConvertTwoCompliment(string i_numberStr, ref string o_signedNumber)
+        {
+            int i;
+            StringBuilder oneComplient = new StringBuilder();
+            StringBuilder twoComplient = new StringBuilder();
+            bool isNegetive = !true;
+            char charToAdd = '0', currentCharFromStr = '0';
+
+            // check if the number represent negitive in SIGNED form : 0-positive; 1-negetive
+            if (i_numberStr[0] == '0')
+            {
+                isNegetive = !true;
+                o_signedNumber = string.Empty;
+            }
+            else
+            {
+                for (i = 0 ; i < i_numberStr.Length; i++)
+                {
+                    currentCharFromStr = i_numberStr[i];
+                    charToAdd = currentCharFromStr.Equals('0') ? '1' : '0';
+                    oneComplient.Append(charToAdd);
+                }
+
+                Console.WriteLine(i_numberStr);
+                Console.WriteLine(oneComplient.ToString());
+
+            }
+
+            return isNegetive;
         }
     }
 }
