@@ -1,7 +1,0 @@
-C:\Users\Itay Cohen\source\repos\ConsoleApp2\B20_Ex01_4\bin\Debug\B20_Ex01_4.exe.config
-C:\Users\Itay Cohen\source\repos\ConsoleApp2\B20_Ex01_4\bin\Debug\B20_Ex01_4.exe
-C:\Users\Itay Cohen\source\repos\ConsoleApp2\B20_Ex01_4\bin\Debug\B20_Ex01_4.pdb
-C:\Users\Itay Cohen\source\repos\ConsoleApp2\B20_Ex01_4\obj\Debug\B20_Ex01_4.csprojAssemblyReference.cache
-C:\Users\Itay Cohen\source\repos\ConsoleApp2\B20_Ex01_4\obj\Debug\B20_Ex01_4.csproj.CoreCompileInputs.cache
-C:\Users\Itay Cohen\source\repos\ConsoleApp2\B20_Ex01_4\obj\Debug\B20_Ex01_4.exe
-C:\Users\Itay Cohen\source\repos\ConsoleApp2\B20_Ex01_4\obj\Debug\B20_Ex01_4.pdb
