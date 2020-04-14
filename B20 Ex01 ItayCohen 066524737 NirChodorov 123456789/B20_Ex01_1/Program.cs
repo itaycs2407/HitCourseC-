@@ -12,8 +12,7 @@ namespace B20_Ex01_1
 
         public static void Ex1()
         {
-            string ourer = string.Empty;
-            ConvertTwoCompliment("111011000", ref ourer);
+           
             int maxDecimalNumber = 0, minDecimalNumber = 0;
             int numOfZero = 0, numOfOne = 0;
             Console.WriteLine("Input the first number.");
@@ -48,7 +47,8 @@ namespace B20_Ex01_1
         public static string GetInputForBinaryNumber()
         {
             int inputNumber, numberTocheckForBinaryDigit;
-            string inputNumberStr;
+            string inputNumberStr = string.Empty;
+            string signedBinaryForm = string.Empty;
             bool notVerifed = true;
             
             do
@@ -82,8 +82,25 @@ namespace B20_Ex01_1
                             notVerifed = !(numberTocheckForBinaryDigit > 0);
                         }            
                     }
+
+                    // the binary number is ok - check for negetive signed
+                    if (notVerifed)
+                    {
+                        if (ConvertTwoCompliment(inputNumberStr, ref signedBinaryForm))
+                        {
+                            Console.WriteLine(string.Format(@"Pay attention : in Signed binary form, the number you entered is {0}, negetive.
+In the assignment orders, it was written to input ONLY positive number! 
+In unsigned binary form the number is {1}.
+if you want to proceed with the unsigned form, enter 1. to input diffrent number, enter 0.", 
+                                                              ConvertToDecimal(signedBinaryForm) * -1 ,ConvertToDecimal(inputNumberStr)));
+                            notVerifed = int.Parse(Console.ReadLine()) == 1 ? true : !true;
+                                                             
+                        }
+                    }
+
                 }
             } 
+
             while (!notVerifed);
 
             return inputNumberStr;
@@ -177,9 +194,9 @@ namespace B20_Ex01_1
 
         public static bool ConvertTwoCompliment(string i_numberStr, ref string o_signedNumber)
         {
-            int i;
-            StringBuilder oneComplient = new StringBuilder();
-            StringBuilder twoComplient = new StringBuilder();
+            int i, carry = 1;
+            StringBuilder oneCompliment = new StringBuilder();
+            StringBuilder twoCompliment = new StringBuilder();
             bool isNegetive = !true;
             char charToAdd = '0', currentCharFromStr = '0';
 
@@ -195,15 +212,43 @@ namespace B20_Ex01_1
                 {
                     currentCharFromStr = i_numberStr[i];
                     charToAdd = currentCharFromStr.Equals('0') ? '1' : '0';
-                    oneComplient.Append(charToAdd);
+                    oneCompliment.Append(charToAdd);
                 }
-
-                Console.WriteLine(i_numberStr);
-                Console.WriteLine(oneComplient.ToString());
-
+                i = 0;
+                StringBuilder reversedString = new StringBuilder(ReverseString(oneCompliment.ToString()));
+                while ((carry ==1) && (i < reversedString.Length))
+                {
+                    currentCharFromStr = reversedString[i];
+                    charToAdd = (currentCharFromStr - '0' + carry == 2) ? '0' : '1';
+                    twoCompliment.Append(charToAdd);
+                    carry = (currentCharFromStr - '0' + carry == 2) ? 1 : 0;
+                    i++;
+                }
+                while (i < reversedString.Length)
+                {
+                    twoCompliment.Append(reversedString[i] - '0');
+                    i++;
+                }
+                o_signedNumber = ReverseString(twoCompliment.ToString());
+                isNegetive = true;
+                
             }
-
             return isNegetive;
         }
+        
+        public static string ReverseString(string i_stringToReverse)
+        {
+            StringBuilder reversedString = new StringBuilder(i_stringToReverse.Length);
+            int i;
+            char currentChar = '0';
+
+            for (i= i_stringToReverse.Length -1;i >=0; i--)
+            {
+                currentChar = i_stringToReverse[i];
+                reversedString.Append(currentChar);
+            }
+            return reversedString.ToString();
+        }
     }
+
 }
