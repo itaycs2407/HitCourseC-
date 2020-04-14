@@ -93,14 +93,11 @@ In the assignment orders, it was written to input ONLY positive number!
 In unsigned binary form the number is {1}.
 if you want to proceed with the unsigned form, enter 1. to input diffrent number, enter 0.", 
                                                               ConvertToDecimal(signedBinaryForm) * -1 ,ConvertToDecimal(inputNumberStr)));
-                            notVerifed = int.Parse(Console.ReadLine()) == 1 ? true : !true;
-                                                             
+                            notVerifed = int.Parse(Console.ReadLine()) == 1 ? true : !true;                                        
                         }
                     }
-
                 }
             } 
-
             while (!notVerifed);
 
             return inputNumberStr;
@@ -216,7 +213,7 @@ if you want to proceed with the unsigned form, enter 1. to input diffrent number
                 }
                 i = 0;
                 StringBuilder reversedString = new StringBuilder(ReverseString(oneCompliment.ToString()));
-                while ((carry ==1) && (i < reversedString.Length))
+                while ((carry == 1) && (i < reversedString.Length))
                 {
                     currentCharFromStr = reversedString[i];
                     charToAdd = (currentCharFromStr - '0' + carry == 2) ? '0' : '1';
@@ -242,11 +239,12 @@ if you want to proceed with the unsigned form, enter 1. to input diffrent number
             int i;
             char currentChar = '0';
 
-            for (i= i_stringToReverse.Length -1;i >=0; i--)
+            for (i = i_stringToReverse.Length -1;i >= 0; i--)
             {
                 currentChar = i_stringToReverse[i];
                 reversedString.Append(currentChar);
             }
+
             return reversedString.ToString();
         }
     }
