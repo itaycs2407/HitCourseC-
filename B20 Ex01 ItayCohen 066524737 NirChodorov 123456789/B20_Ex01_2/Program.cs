@@ -7,68 +7,47 @@ namespace B20_Ex01_2
     {
         public static void Main()
         {
-            Ex2(7,7,true);
-           
+            SandTimer(5, 5, true);
         }
 
-        private static void Ex2(int i_totalNumberOfLines, int i_currentNumberOfStar, bool dscOrder)
+        private static void MakeChars(int i_numberOfItaration, char charToType, ref StringBuilder strToBuild)
         {
-            int i;
-            StringBuilder strToPrint = new StringBuilder();
-
-            if (dscOrder)
+            for (int i = 0; i < i_numberOfItaration; i++)
             {
-                if (i_currentNumberOfStar < 1)
+                strToBuild.Append(charToType);
+            }
+        }
+
+        public static void SandTimer(int i_numberOfRows, int i_numberOfStar, bool isDsc)
+        {
+            if (isDsc)
+            {
+                if (i_numberOfStar < 5)
                 {
-                    dscOrder = !true;
-                    
+                    isDsc = !true;
                 }
-                else
-                {
-                    for (i = 0; i < (i_totalNumberOfLines - (i_currentNumberOfStar - 2)) / 2; i++)
-                    {
-                        strToPrint.Append(" ");
-                    }
-                    for (i = 0; i < i_currentNumberOfStar; i++)
-                    {
-                        strToPrint.Append("*");
-                    }
-                    for (i = 0; i < (i_totalNumberOfLines - (i_currentNumberOfStar - 2)) / 2; i++)
-                    {
-                        strToPrint.Append(" ");
-                    }
-                    Console.WriteLine(strToPrint.ToString());
-                    Ex2(i_totalNumberOfLines, i_currentNumberOfStar - 2, dscOrder);
-                   Ex2(i_totalNumberOfLines, i_currentNumberOfStar + 2, !dscOrder);
-                }
+                StringBuilder strToPrint = new StringBuilder();
+                MakeChars((i_numberOfRows - i_numberOfStar) / 2, ' ', ref strToPrint);
+                MakeChars(i_numberOfStar, '*', ref strToPrint);
+                MakeChars((i_numberOfRows - i_numberOfStar) / 2, ' ', ref strToPrint);
+                Console.WriteLine(strToPrint.ToString());
+                SandTimer(i_numberOfRows, i_numberOfStar - 2, isDsc);
             }
             else
             {
-                if (i_totalNumberOfLines < i_currentNumberOfStar)
+                if (i_numberOfRows < i_numberOfStar)
                 {
                     return;
                 }
-                else
-                {
-                    for (i = 0; i < (i_totalNumberOfLines - (i_currentNumberOfStar - 2)) / 2; i++)
-                    {
-                        strToPrint.Append(" ");
-                    }
-                    for (i = 0; i < i_currentNumberOfStar; i++)
-                    {
-                        strToPrint.Append("*");
-                    }
-                    for (i = 0; i < (i_totalNumberOfLines - (i_currentNumberOfStar - 2)) / 2; i++)
-                    {
-                        strToPrint.Append(" ");
-                    }
-                    Console.WriteLine(strToPrint.ToString());
-                    Ex2(i_totalNumberOfLines , i_currentNumberOfStar + 2, dscOrder);
-
-
-                }
+                StringBuilder strToPrint = new StringBuilder();
+                MakeChars((i_numberOfRows - i_numberOfStar) / 2, ' ', ref strToPrint);
+                MakeChars(i_numberOfStar, '*', ref strToPrint);
+                MakeChars((i_numberOfRows - i_numberOfStar) / 2, ' ', ref strToPrint);
+                Console.WriteLine(strToPrint.ToString());
+                SandTimer(i_numberOfRows, i_numberOfStar + 2, isDsc);
             }
         }
-
     }
 }
+      
+

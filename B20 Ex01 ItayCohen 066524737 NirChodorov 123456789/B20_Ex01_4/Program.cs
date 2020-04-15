@@ -8,17 +8,15 @@ namespace B20_Ex01_4
         public static void Main()
         {
                 string inputStr = GetXCharString(8);
-                Console.WriteLine(string.Format("Is this string is polyndrom? {0}", IsPolyndrom(inputStr)));
-                if (IsLanguageByAsciiCodesBounds(inputStr, '0', '9'))
-                {
-                    Console.WriteLine(string.Format("Is the number devided by 5? {0}", IsDevidedByNum(int.Parse(inputStr), 5)));
-                }
-                else
-                {
-                    Console.WriteLine(string.Format("The number of uppercase letters in this string is: {0}", CountUpperCaseLetters(inputStr)));
-                }
-            Console.WriteLine("Press any key to exit....");
-            Console.ReadLine();
+                Console.WriteLine(string.Format("Is the string is polyndrom? {0}", IsPolyndrom(inputStr)));
+            if (IsLanguageByAsciiCodesBounds(inputStr, '0', '9'))
+            {
+                Console.WriteLine(string.Format("Is the number devided by 5? {0}", IsDevidedByNum(int.Parse(inputStr), 5)));
+            }
+            else
+            {
+                Console.WriteLine(string.Format("The number of uppercase letters in this string is: {0}", CountUpperCaseLetters(inputStr)));
+            }
         }
 
         public static string GetXCharString(int i_x)
@@ -55,6 +53,7 @@ namespace B20_Ex01_4
             {
                 return true; 
             }
+
             if (i_str[0] == i_str[i_str.Length - 1])
             {
                 return IsPolyndrom(i_str.Substring(1, i_str.Length - 2)); 
@@ -66,8 +65,8 @@ namespace B20_Ex01_4
         public static bool IsDevidedByNum(int i_numberToDivide, int i_numberToDivideIn)
         {
             return (i_numberToDivideIn == 0) ? !true: i_numberToDivide % i_numberToDivideIn == 0;
-
         }
+
         public static int CountUpperCaseLetters(string i_str)
         {
             int upperCaseCounter = 0;

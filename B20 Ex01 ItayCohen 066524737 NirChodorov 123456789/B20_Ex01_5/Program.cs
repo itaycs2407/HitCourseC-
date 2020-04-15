@@ -12,8 +12,7 @@ namespace B20_Ex01_5
             Console.WriteLine("Min digit in number is : {0}", GetMinDigit(inputNum));
             Console.WriteLine("The amount of digits devided by 3 is : {0}", CountDigitsDividedByNum(inputStr, 3));
             Console.WriteLine("The amount of digits greater than the unit place is : {0}", CountGreaterThanDigit(inputNum, inputNum % 10));
-            Console.WriteLine("Press any key to exit....");
-            Console.ReadLine();
+      
         }
 
         public static int CountGreaterThanDigit(int i_number, int i_digitToCompare)

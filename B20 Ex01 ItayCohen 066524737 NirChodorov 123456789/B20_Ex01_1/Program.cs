@@ -2,7 +2,7 @@
 using System.Text;
 
 namespace B20_Ex01_1
-{ 
+{
     //TODO:: check tryparse
     public class Program
     {
@@ -36,8 +36,6 @@ Among the three numbers, you have {2} numbers which are the power of 2.
 Among the three numbers, you have {3} numbers which there digits are in growing order
 The avg number of 1 is : {4: 0.00}
 The avg number of 0 is : {5: 0.00}", maxDecimalNumber, minDecimalNumber, pow2Counter, numofAscDigits, (double)numOfOne / 3, (double)numOfZero / 3));
-            Console.WriteLine("Press any key to exit....");
-            Console.ReadLine();
         }
 
         public static string GetInputForBinaryNumber()
@@ -55,6 +53,7 @@ The avg number of 0 is : {5: 0.00}", maxDecimalNumber, minDecimalNumber, pow2Cou
                 inputNumberStr = Console.ReadLine();
                 int.TryParse(inputNumberStr, out inputNumber);
             }
+
             return inputNumberStr;
         }
 
@@ -75,10 +74,10 @@ The avg number of 0 is : {5: 0.00}", maxDecimalNumber, minDecimalNumber, pow2Cou
         public static int CountSpecialChar(string i_strToCheck, char i_charToCount)
         {
             int specialCharCounter = 0;
-                
+
             while (i_strToCheck.Length > 0)
             {
-                specialCharCounter = (i_strToCheck[0]  == i_charToCount) ? specialCharCounter + 1 : specialCharCounter;
+                specialCharCounter = (i_strToCheck[0] == i_charToCount) ? specialCharCounter + 1 : specialCharCounter;
                 i_strToCheck = i_strToCheck.Substring(1, i_strToCheck.Length - 1);
             }
 
@@ -102,7 +101,7 @@ The avg number of 0 is : {5: 0.00}", maxDecimalNumber, minDecimalNumber, pow2Cou
 
             for (i = 0; i < i_numberAsStr.Length; i++)
             {
-                addition = (addition * 2) + Convert.ToInt32(i_numberAsStr[i]) - 48 ;
+                addition = (addition * 2) + Convert.ToInt32(i_numberAsStr[i]) - 48;
             }
 
             return addition;
@@ -120,7 +119,7 @@ The avg number of 0 is : {5: 0.00}", maxDecimalNumber, minDecimalNumber, pow2Cou
             }
 
             return !true;
-            
+
         }
 
         public static void GetMaxAndMin(int i_firstNumber, int i_secondNumber, int i_thirdNumber, ref int o_maxNumber, ref int o_minNumber)
@@ -150,54 +149,9 @@ The avg number of 0 is : {5: 0.00}", maxDecimalNumber, minDecimalNumber, pow2Cou
                 {
                     o_maxNumber = i_thirdNumber;
                 }
-<<<<<<< HEAD
-            } 
 
-             if (i_firstNumber < i_secondNumber)
-            {
-                if (i_firstNumber < i_thirdNumber)
-                {
-                    o_minNumber = i_firstNumber;
-                }
-                else if (i_thirdNumber < i_secondNumber)
-                {
-                    o_minNumber = i_thirdNumber;
-                }
-                else
-                {
-                    o_minNumber = i_secondNumber;
-                }
             }
-            else
-            {
-                if (i_secondNumber < i_thirdNumber)
-                {
-                    o_minNumber = i_secondNumber;
-                }
-                else
-                {
-                    o_minNumber = i_thirdNumber;
-                }
-            } 
-            */
-        }
 
-        public static bool ConvertTwoCompliment(string i_numberStr, ref string o_signedNumber)
-        {
-            int i, carry = 1;
-            StringBuilder oneCompliment = new StringBuilder();
-            StringBuilder twoCompliment = new StringBuilder();
-            bool isNegetive = !true;
-            char charToAdd = '0', currentCharFromStr = '0';
-
-            // check if the number represent negitive in SIGNED form : 0-positive; 1-negetive
-            if (i_numberStr[0] == '0')
-            {
-                isNegetive = !true;
-                o_signedNumber = string.Empty;
-=======
->>>>>>> 857ef2e0da906a53d8ef9f7093c9f262acb3081c
-            }
             if (i_firstNumber < i_secondNumber)
             {
                 if (i_firstNumber < i_thirdNumber)
@@ -224,7 +178,7 @@ The avg number of 0 is : {5: 0.00}", maxDecimalNumber, minDecimalNumber, pow2Cou
                     o_minNumber = i_thirdNumber;
                 }
             }
+
         }
     }
-
 }
