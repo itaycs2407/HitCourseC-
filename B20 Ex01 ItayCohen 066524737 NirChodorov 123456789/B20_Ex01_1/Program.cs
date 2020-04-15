@@ -2,128 +2,98 @@
 using System.Text;
 
 namespace B20_Ex01_1
-{
+{ 
+    //TODO:: check tryparse
     public class Program
     {
         public static void Main()
         {
-            Ex1();
-        }
-
-        public static void Ex1()
-        {
-           
             int maxDecimalNumber = 0, minDecimalNumber = 0;
             int numOfZero = 0, numOfOne = 0;
             Console.WriteLine("Input the first number.");
             string firstNumberSTR = GetInputForBinaryNumber();
-     //     string firstNumberSTR = "111011000"; 
             Console.WriteLine("Input the second number.");
-            string thirdNumberSTR = GetInputForBinaryNumber();
-     //     string thirdNumberSTR = "111010010";
-            Console.WriteLine("Input the third number.");
             string secondNumberSTR = GetInputForBinaryNumber();
-     //     string secondNumberSTR = "111010100"; 
+            Console.WriteLine("Input the third number.");
+            string thirdNumberSTR = GetInputForBinaryNumber();
             int firstNumberDec = ConvertToDecimal(firstNumberSTR);
             int secondNumberDec = ConvertToDecimal(secondNumberSTR);
             int thirdNumberDec = ConvertToDecimal(thirdNumberSTR);
-            Console.WriteLine(String.Format("The first number you enrterd is  : {0} in binary form, it equals to {1} in decimal form.", firstNumberSTR, firstNumberDec));
-            Console.WriteLine(String.Format("The second number you enrterd is : {0} in binary form, it equals to {1} in decimal form.", secondNumberSTR, secondNumberDec));
-            Console.WriteLine(String.Format("The third number you enrterd is  : {0} in binary form, it equals to {1} in decimal form.", thirdNumberSTR, thirdNumberDec));
-            Console.WriteLine("============================================");
-            CheckForMaxMin(firstNumberDec, secondNumberDec, thirdNumberDec, ref maxDecimalNumber, ref minDecimalNumber);
-            Console.WriteLine(" More statistics : ");
-            Console.WriteLine("The max number is {0} and the minimum is {1} : ", maxDecimalNumber, minDecimalNumber);
-            Console.WriteLine("Among the three numbers, you have {0} numbers which are the power of 2.",CheckForPowerOfTwo(firstNumberDec) + CheckForPowerOfTwo(secondNumberDec) + CheckForPowerOfTwo(thirdNumberDec));
-            Console.WriteLine("Among the three numbers, you have {0} numbers which there digits are in growing order", Convert.ToInt32(CheckForUpperSeries(firstNumberDec)) + Convert.ToInt32(CheckForUpperSeries(secondNumberDec)) + Convert.ToInt32(CheckForUpperSeries(thirdNumberDec)));
-            numOfOne = CheckForSpecialChar(firstNumberSTR, '1') + CheckForSpecialChar(secondNumberSTR, '0') + CheckForSpecialChar(thirdNumberSTR, '0');
-            numOfZero = CheckForSpecialChar(firstNumberSTR, '0') + CheckForSpecialChar(secondNumberSTR, '1') + CheckForSpecialChar(thirdNumberSTR, '1');
-            Console.WriteLine("The avg number of 1 is : {0: 0.00}",(double)numOfOne / 3);
-            Console.WriteLine("The avg number of 0 is : {0: 0.00}", (double)numOfZero / 3);
-            Console.WriteLine("Press any key to exit....");           
-            System.Console.ReadLine();
+            Console.WriteLine(string.Format(@"The first number you enrterd is  : {0} in binary form, it equals to {1} in decimal form.
+The second number you enrterd is : {2} in binary form, it equals to {3} in decimal form.
+The third number you enrterd is  : {4} in binary form, it equals to {5} in decimal form.
+", firstNumberSTR, firstNumberDec, secondNumberSTR, secondNumberDec, thirdNumberSTR, thirdNumberDec));
+
+            GetMaxAndMin(firstNumberDec, secondNumberDec, thirdNumberDec, ref maxDecimalNumber, ref minDecimalNumber);
+            numOfOne = CountSpecialChar(firstNumberSTR, '1') + CountSpecialChar(secondNumberSTR, '1') + CountSpecialChar(thirdNumberSTR, '1');
+            numOfZero = CountSpecialChar(firstNumberSTR, '0') + CountSpecialChar(secondNumberSTR, '0') + CountSpecialChar(thirdNumberSTR, '0');
+            int numofAscDigits = Convert.ToByte(AreDigitsAsc(firstNumberDec)) + Convert.ToByte(AreDigitsAsc(secondNumberDec)) + Convert.ToByte(AreDigitsAsc(thirdNumberDec));
+            int pow2Counter = Convert.ToByte(IsPowerOfX(firstNumberDec, 2)) + Convert.ToByte(IsPowerOfX(secondNumberDec, 2)) + Convert.ToByte(IsPowerOfX(thirdNumberDec, 2));
+            Console.WriteLine(
+                string.Format(@"More statistics : 
+The max number is {0} and the minimum is {1} : 
+Among the three numbers, you have {2} numbers which are the power of 2.
+Among the three numbers, you have {3} numbers which there digits are in growing order
+The avg number of 1 is : {4: 0.00}
+The avg number of 0 is : {5: 0.00}", maxDecimalNumber, minDecimalNumber, pow2Counter, numofAscDigits, (double)numOfOne / 3, (double)numOfZero / 3));
+            Console.WriteLine("Press any key to exit....");
+            Console.ReadLine();
         }
 
         public static string GetInputForBinaryNumber()
         {
-            int inputNumber, numberTocheckForBinaryDigit;
+            int inputNumber;
             string inputNumberStr = string.Empty;
-            string signedBinaryForm = string.Empty;
-            bool notVerifed = true;
-            
-            do
+            //string signedBinaryForm = string.Empty;
+
+            Console.WriteLine("Please type a binary 9 digits number");
+            inputNumberStr = Console.ReadLine();
+            int.TryParse(inputNumberStr, out inputNumber);
+            while (inputNumberStr.Length != 9 || inputNumber < 0 || !IsBinary(inputNumberStr))
             {
-                Console.WriteLine("Please enter 9 digit binary number : ");
+                Console.WriteLine("Invalid input, please type again");
                 inputNumberStr = Console.ReadLine();
                 int.TryParse(inputNumberStr, out inputNumber);
-                if (inputNumberStr.Length != 9)
-                {
-                    Console.WriteLine("Not a 9 digit Number. Try again");
-                    notVerifed = !true;
-                }
-                else if (inputNumber < 0)
-                {
-                    Console.WriteLine("Not positive Number. Try again");
-                    notVerifed = !true;
-                }
-                else
-                {
-                    numberTocheckForBinaryDigit = inputNumber;
-                    notVerifed = true;
-                    while (numberTocheckForBinaryDigit > 0 && notVerifed)
-                    {
-                        if ((numberTocheckForBinaryDigit % 10 == 0) || (numberTocheckForBinaryDigit % 10 == 1))
-                        {
-                            numberTocheckForBinaryDigit /= 10;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Not Binary Number. Try again");
-                            notVerifed = !(numberTocheckForBinaryDigit > 0);
-                        }            
-                    }
-
-                    // the binary number is ok - check for negetive signed
-                    if (notVerifed)
-                    {
-                        if (ConvertTwoCompliment(inputNumberStr, ref signedBinaryForm))
-                        {
-                            Console.WriteLine(string.Format(@"Pay attention : in Signed binary form, the number you entered is {0}, negetive.
-In the assignment orders, it was written to input ONLY positive number! 
-In unsigned binary form the number is {1}.
-if you want to proceed with the unsigned form, enter 1. to input diffrent number, enter 0.", 
-                                                              ConvertToDecimal(signedBinaryForm) * -1 ,ConvertToDecimal(inputNumberStr)));
-                            notVerifed = int.Parse(Console.ReadLine()) == 1 ? true : !true;                                        
-                        }
-                    }
-                }
-            } 
-            while (!notVerifed);
-
+            }
             return inputNumberStr;
         }
 
-        public static int CheckForSpecialChar(string i_numberToCheckStr, char i_whatToCount)
+        public static bool IsBinary(string i_strToCheck)
+        {
+            int.TryParse(i_strToCheck, out int numToCheck);
+            while (numToCheck > 0)
+            {
+                if (!((numToCheck % 10 == 0) || (numToCheck % 10 == 1)))
+                {
+                    return !true;
+                }
+                numToCheck /= 10;
+            }
+            return true;
+        }
+
+        public static int CountSpecialChar(string i_strToCheck, char i_charToCount)
         {
             int specialCharCounter = 0;
-            while (i_numberToCheckStr.Length > 0)
+                
+            while (i_strToCheck.Length > 0)
             {
-                specialCharCounter = (i_numberToCheckStr[i_numberToCheckStr.Length - 1]  == i_whatToCount) ? specialCharCounter + 1 : specialCharCounter;
-                i_numberToCheckStr = i_numberToCheckStr.Substring(0, i_numberToCheckStr.Length - 1);
+                specialCharCounter = (i_strToCheck[0]  == i_charToCount) ? specialCharCounter + 1 : specialCharCounter;
+                i_strToCheck = i_strToCheck.Substring(1, i_strToCheck.Length - 1);
             }
 
             return specialCharCounter;
         }
 
-        public static int CheckForPowerOfTwo(int i_numberToCheck)
+        public static bool IsPowerOfX(int i_numberToCheck, int i_x)
         {
-            int multiTemp = 1;
-            while (multiTemp < i_numberToCheck)
+            int powByX = 1;
+            while (powByX < i_numberToCheck)
             {
-                multiTemp *= 2;
+                powByX *= i_x;
             }
 
-            return Convert.ToInt32(multiTemp == i_numberToCheck); 
+            return powByX == i_numberToCheck;
         }
 
         public static int ConvertToDecimal(string i_numberAsStr)
@@ -137,29 +107,24 @@ if you want to proceed with the unsigned form, enter 1. to input diffrent number
 
             return addition;
         }
-        // maybe to do for down series
 
-        public static bool CheckForUpperSeries(int i_number)
+        public static bool AreDigitsAsc(int i_number)
         {
             if (i_number < 10)
             {
                 return true;
             }
-            else if (i_number % 10 > (i_number / 10) % 10)
+            if (i_number % 10 > (i_number / 10) % 10)
             {
-                return CheckForUpperSeries(i_number / 10);
+                return AreDigitsAsc(i_number / 10);
             }
-            else
-            {
-                return !true;
-            }
+
+            return !true;
+            
         }
 
-        public static void CheckForMaxMin(int i_firstNumber, int i_secondNumber, int i_thirdNumber, ref int o_maxNumber, ref int o_minNumber)
+        public static void GetMaxAndMin(int i_firstNumber, int i_secondNumber, int i_thirdNumber, ref int o_maxNumber, ref int o_minNumber)
         {
-            o_maxNumber = i_firstNumber > i_secondNumber ? i_firstNumber > i_thirdNumber ? i_firstNumber : i_thirdNumber > i_secondNumber ? i_thirdNumber : i_secondNumber : i_secondNumber > i_thirdNumber ? i_secondNumber : i_thirdNumber;
-            o_minNumber = i_firstNumber < i_secondNumber ? i_firstNumber < i_thirdNumber ? i_firstNumber : i_thirdNumber < i_secondNumber ? i_thirdNumber : i_secondNumber : i_secondNumber < i_thirdNumber ? i_secondNumber : i_thirdNumber;
-            /*
             if (i_firstNumber > i_secondNumber)
             {
                 if (i_firstNumber > i_thirdNumber)
@@ -185,6 +150,7 @@ if you want to proceed with the unsigned form, enter 1. to input diffrent number
                 {
                     o_maxNumber = i_thirdNumber;
                 }
+<<<<<<< HEAD
             } 
 
              if (i_firstNumber < i_secondNumber)
@@ -229,50 +195,35 @@ if you want to proceed with the unsigned form, enter 1. to input diffrent number
             {
                 isNegetive = !true;
                 o_signedNumber = string.Empty;
+=======
+>>>>>>> 857ef2e0da906a53d8ef9f7093c9f262acb3081c
+            }
+            if (i_firstNumber < i_secondNumber)
+            {
+                if (i_firstNumber < i_thirdNumber)
+                {
+                    o_minNumber = i_firstNumber;
+                }
+                else if (i_thirdNumber < i_secondNumber)
+                {
+                    o_minNumber = i_thirdNumber;
+                }
+                else
+                {
+                    o_minNumber = i_secondNumber;
+                }
             }
             else
             {
-                for (i = 0 ; i < i_numberStr.Length; i++)
+                if (i_secondNumber < i_thirdNumber)
                 {
-                    currentCharFromStr = i_numberStr[i];
-                    charToAdd = currentCharFromStr.Equals('0') ? '1' : '0';
-                    oneCompliment.Append(charToAdd);
+                    o_minNumber = i_secondNumber;
                 }
-                i = 0;
-                StringBuilder reversedString = new StringBuilder(ReverseString(oneCompliment.ToString()));
-                while ((carry == 1) && (i < reversedString.Length))
+                else
                 {
-                    currentCharFromStr = reversedString[i];
-                    charToAdd = (currentCharFromStr - '0' + carry == 2) ? '0' : '1';
-                    twoCompliment.Append(charToAdd);
-                    carry = (currentCharFromStr - '0' + carry == 2) ? 1 : 0;
-                    i++;
+                    o_minNumber = i_thirdNumber;
                 }
-                while (i < reversedString.Length)
-                {
-                    twoCompliment.Append(reversedString[i] - '0');
-                    i++;
-                }
-                o_signedNumber = ReverseString(twoCompliment.ToString());
-                isNegetive = true;
-                
             }
-            return isNegetive;
-        }
-        
-        public static string ReverseString(string i_stringToReverse)
-        {
-            StringBuilder reversedString = new StringBuilder(i_stringToReverse.Length);
-            int i;
-            char currentChar = '0';
-
-            for (i = i_stringToReverse.Length -1;i >= 0; i--)
-            {
-                currentChar = i_stringToReverse[i];
-                reversedString.Append(currentChar);
-            }
-
-            return reversedString.ToString();
         }
     }
 

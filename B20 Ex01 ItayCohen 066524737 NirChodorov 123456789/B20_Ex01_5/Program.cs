@@ -1,62 +1,84 @@
-﻿namespace B20_Ex01_5
+﻿using System;
+using Ex4Proj = B20_Ex01_4.Program;
+namespace B20_Ex01_5
 {
     public class Program
     {
         public static void Main()
         {
-            Ex5();
+            string inputStr = GetXCharInt(9);
+            int inputNum = int.Parse(inputStr);
+            Console.WriteLine("Max digit in number is : {0}", GetMaxDigit(inputNum));
+            Console.WriteLine("Min digit in number is : {0}", GetMinDigit(inputNum));
+            Console.WriteLine("The amount of digits devided by 3 is : {0}", CountDigitsDividedByNum(inputStr, 3));
+            Console.WriteLine("The amount of digits greater than the unit place is : {0}", CountGreaterThanDigit(inputNum, inputNum % 10));
+            Console.WriteLine("Press any key to exit....");
+            Console.ReadLine();
         }
 
-        public static void Ex5() => CheckNineDigitNumber(GetInputFromUser());
-
-        private static void CheckNineDigitNumber(int i_number)
+        public static int CountGreaterThanDigit(int i_number, int i_digitToCompare)
         {
-            int maxDigit, minDigit, divideIn3Ctr = 0, greaterFromUnitPlaceCtr = 0, unitPlace;
-            unitPlace = maxDigit = minDigit = i_number % 10;
-
-            // get all answers in the loop
-            while (i_number > 0)
+           if(i_number <= 0)
             {
-                int digitToCheck = i_number % 10;
-                maxDigit = digitToCheck > maxDigit ? digitToCheck : maxDigit;
-                minDigit = digitToCheck < minDigit ? digitToCheck : minDigit;
-                greaterFromUnitPlaceCtr = digitToCheck > unitPlace ? greaterFromUnitPlaceCtr + 1 : greaterFromUnitPlaceCtr;
-                divideIn3Ctr = (digitToCheck % 3 == 0) ? divideIn3Ctr + 1 : divideIn3Ctr;
-                i_number /= 10;
+                return 0;
+            }
+            return (i_number % 10 > i_digitToCompare) ? CountGreaterThanDigit(i_number /10, i_digitToCompare) + 1 : CountGreaterThanDigit(i_number / 10, i_digitToCompare);
+        }
+
+        public static int CountDigitsDividedByNum(string i_numToDivideStr, int i_numToDivideIn)
+        {
+            int dividedByNumCounter = 0;
+            while (i_numToDivideStr.Length > 0)
+            {
+                if (Ex4Proj.IsDevidedByNum((i_numToDivideStr[0] - '0'), i_numToDivideIn))
+                {
+                    dividedByNumCounter++;
+                }
+                i_numToDivideStr = i_numToDivideStr.Substring(1, i_numToDivideStr.Length -1);
             }
 
-            // print all the answers
-            System.Console.WriteLine("Tha maximun digit in the number is : " + maxDigit);
-            System.Console.WriteLine("Tha minimum digit in the number is : " + minDigit);
-            System.Console.WriteLine("Tha number of digits that greater then the unit place is : ", greaterFromUnitPlaceCtr);
-            System.Console.WriteLine("Tha number of digits divide by 3 is : ", divideIn3Ctr);
+            return dividedByNumCounter;
         }
 
-        private static int GetInputFromUser()
+        public static string GetXCharInt(int i_numOfDigits)
         {
-                bool goodInput = !true;
-                string inputNumber = string.Empty;
-                int number;
-               
-                do
+            Console.WriteLine("Please type a 9 digits number");
+            string inputStr = Console.ReadLine();
+            while (inputStr.Length != 9 || !Ex4Proj.IsLanguageByAsciiCodesBounds(inputStr, '0', '9'))
+            {
+                Console.WriteLine("Invalid input, Please type again");
+                inputStr = Console.ReadLine();
+            }
+
+            return inputStr;
+        }
+
+        public static int GetMaxDigit(int i_number)
+        {
+            int maxDigit = i_number % 10;
+            while(i_number > 0)
+            {
+                if(maxDigit < i_number% 10)
                 {
-                    System.Console.WriteLine("Please input 9 digit number and press enter !");
-                    inputNumber = System.Console.ReadLine();
-                    int.TryParse(inputNumber, out number);
+                    maxDigit = i_number % 10;
+                }
+                i_number /= 10;
+            }
+            return maxDigit;
+        }
 
-                    // System.Console.WriteLine(number);
-                    if (int.TryParse(inputNumber, out number))
-                    {
-                        goodInput = true;
-                    }
-                    else
-                    {
-                        System.Console.WriteLine("You entered not VALID number !!!");
-                    }
-                } 
-                while (!goodInput);
-
-                return number;
-            }   
+        public static int GetMinDigit(int i_number)
+        {
+            int minDigit = i_number % 10;
+            while (i_number > 0)
+            {
+                if (minDigit > i_number % 10)
+                {
+                    minDigit = i_number % 10;
+                }
+                i_number /= 10;
+            }
+            return minDigit;
         }
     }
+}
