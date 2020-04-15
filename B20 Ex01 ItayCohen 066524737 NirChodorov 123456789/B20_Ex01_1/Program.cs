@@ -186,6 +186,33 @@ if you want to proceed with the unsigned form, enter 1. to input diffrent number
                     o_maxNumber = i_thirdNumber;
                 }
             } 
+
+             if (i_firstNumber < i_secondNumber)
+            {
+                if (i_firstNumber < i_thirdNumber)
+                {
+                    o_minNumber = i_firstNumber;
+                }
+                else if (i_thirdNumber < i_secondNumber)
+                {
+                    o_minNumber = i_thirdNumber;
+                }
+                else
+                {
+                    o_minNumber = i_secondNumber;
+                }
+            }
+            else
+            {
+                if (i_secondNumber < i_thirdNumber)
+                {
+                    o_minNumber = i_secondNumber;
+                }
+                else
+                {
+                    o_minNumber = i_thirdNumber;
+                }
+            } 
             */
         }
 
