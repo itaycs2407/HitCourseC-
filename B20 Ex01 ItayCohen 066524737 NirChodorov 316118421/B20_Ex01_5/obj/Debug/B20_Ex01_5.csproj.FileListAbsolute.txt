@@ -1,0 +1,42 @@
+C:\C#\HitCourseC-\HitCourseC-\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\bin\Debug\B20_Ex01_5.exe.config
+C:\C#\HitCourseC-\HitCourseC-\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\bin\Debug\B20_Ex01_5.exe
+C:\C#\HitCourseC-\HitCourseC-\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\bin\Debug\B20_Ex01_5.pdb
+C:\C#\HitCourseC-\HitCourseC-\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\bin\Debug\B20_Ex01_4.exe
+C:\C#\HitCourseC-\HitCourseC-\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\bin\Debug\B20_Ex01_4.pdb
+C:\C#\HitCourseC-\HitCourseC-\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\bin\Debug\B20_Ex01_4.exe.config
+C:\C#\HitCourseC-\HitCourseC-\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\obj\Debug\B20_Ex01_5.csprojResolveAssemblyReference.cache
+C:\C#\HitCourseC-\HitCourseC-\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\obj\Debug\B20_Ex01_5.csproj.CoreCompileInputs.cache
+C:\C#\HitCourseC-\HitCourseC-\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\obj\Debug\B20_Ex01_5.exe
+C:\C#\HitCourseC-\HitCourseC-\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\obj\Debug\B20_Ex01_5.pdb
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\bin\Debug\B20_Ex01_5.exe.config
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\bin\Debug\B20_Ex01_5.exe
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\bin\Debug\B20_Ex01_5.pdb
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\bin\Debug\B20_Ex01_4.exe
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\bin\Debug\B20_Ex01_4.pdb
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\bin\Debug\B20_Ex01_4.exe.config
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\obj\Debug\B20_Ex01_5.csprojAssemblyReference.cache
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\obj\Debug\B20_Ex01_5.csproj.CoreCompileInputs.cache
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\obj\Debug\B20_Ex01_5.csproj.CopyComplete
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\obj\Debug\B20_Ex01_5.exe
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\obj\Debug\B20_Ex01_5.pdb
+C:\C#\proj1\HitCourseC-\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\bin\Debug\B20_Ex01_5.exe.config
+C:\C#\proj1\HitCourseC-\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\bin\Debug\B20_Ex01_5.exe
+C:\C#\proj1\HitCourseC-\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\bin\Debug\B20_Ex01_5.pdb
+C:\C#\proj1\HitCourseC-\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\bin\Debug\B20_Ex01_4.exe
+C:\C#\proj1\HitCourseC-\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\bin\Debug\B20_Ex01_4.pdb
+C:\C#\proj1\HitCourseC-\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\bin\Debug\B20_Ex01_4.exe.config
+C:\C#\proj1\HitCourseC-\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\obj\Debug\B20_Ex01_5.csprojResolveAssemblyReference.cache
+C:\C#\proj1\HitCourseC-\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\obj\Debug\B20_Ex01_5.csproj.CoreCompileInputs.cache
+C:\C#\proj1\HitCourseC-\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\obj\Debug\B20_Ex01_5.exe
+C:\C#\proj1\HitCourseC-\B20 Ex01 ItayCohen 066524737 NirChodorov 123456789\B20_Ex01_5\obj\Debug\B20_Ex01_5.pdb
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 316118421\B20_Ex01_5\bin\Debug\B20_Ex01_5.exe.config
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 316118421\B20_Ex01_5\bin\Debug\B20_Ex01_5.exe
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 316118421\B20_Ex01_5\bin\Debug\B20_Ex01_5.pdb
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 316118421\B20_Ex01_5\bin\Debug\B20_Ex01_4.exe
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 316118421\B20_Ex01_5\bin\Debug\B20_Ex01_4.pdb
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 316118421\B20_Ex01_5\bin\Debug\B20_Ex01_4.exe.config
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 316118421\B20_Ex01_5\obj\Debug\B20_Ex01_5.csprojAssemblyReference.cache
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 316118421\B20_Ex01_5\obj\Debug\B20_Ex01_5.csproj.CoreCompileInputs.cache
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 316118421\B20_Ex01_5\obj\Debug\B20_Ex01_5.csproj.CopyComplete
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 316118421\B20_Ex01_5\obj\Debug\B20_Ex01_5.exe
+C:\Users\Itay Cohen\source\repos\HitCourse\B20 Ex01 ItayCohen 066524737 NirChodorov 316118421\B20_Ex01_5\obj\Debug\B20_Ex01_5.pdb
